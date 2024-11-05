@@ -3,20 +3,22 @@ import item
 
 # Shelf stores bookmarks (their names and identificators)
 class Shelf:
-    def __init__(self, name):
+    def __init__(self, name: str):
         self.name: str = name
         self.items: list[item.Item] = []
 
-    def change_name(self, new_name):
+    def change_name(self, new_name: str):
         self.name: str = new_name
 
-    def add_item(self, new_bookmark):
+    def add_item(self, new_bookmark: item.Item):
         if isinstance(new_bookmark, item.Item):
             self.items.append(new_bookmark)
         else:
             raise ValueError("Only Bookmark instances can be added to the shelf.")
 
-    def remove_item(self, index):
+    def remove_item(self, index: int):
+        if index >= len(self.items):
+            print("Index out of range.")
         self.items.pop(index)
 
     # Not completed function for giving information

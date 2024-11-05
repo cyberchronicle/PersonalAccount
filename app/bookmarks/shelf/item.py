@@ -22,4 +22,4 @@ class Item:
         print(self.name)
 
     def __str__(self):
-        return f"Item Name: {self.name}, Id: {self.id}"
+        return f"Item Name: {self.name}, Id: {self.id}, Added at: {self.added_at}"
